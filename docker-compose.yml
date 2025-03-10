@@ -1,0 +1,72 @@
+services:
+  app:
+    container_name: front-end
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    image: nginx
+    ports:
+      - "${HOST_IP}:8443:443"  # Maps external 8443 to internal 443
+    volumes:
+      - front-end-data:/usr/share/nginx/html
+    depends_on:
+      - back-end
+    environment:
+    - HOST_IP=${HOST_IP} 
+    networks:
+      - ft_transcendence
+    env_file:
+      - .env
+    restart: always
+
+  back-end:
+    container_name: back-end
+    restart: always
+    build:
+      context: .
+      dockerfile: ./backend/Dockerfile
+    env_file:
+      - .env
+    environment:
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./backend/src/backend:/backend
+      - database-postgres:/var/lib/postgresql/data
+    networks:
+      - ft_transcendence
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    restart: always
+    volumes:
+      - database-postgres:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 1000000
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    networks:
+      - ft_transcendence
+
+volumes:
+  front-end-data:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ./volume/front_end
+  database-postgres:
+
+networks:
+  ft_transcendence:
+    name: ft_transcendence
+    driver: bridge

@@ -1,0 +1,850 @@
+ocker ocker
+
+/* Scrollbar Styling (Limited Support) */
+::-webkit-scrollbar {
+	width: 16px;
+	background-color: #bfbfbf;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #808080;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #404040;
+	border-bottom: 2px solid #404040;
+}
+
+/* Enhanced Slider Thumb */
+#soundVolume::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 18px;
+	height: 18px;
+	background: #bfbfbf;
+	border: 2px solid #ffffff;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: -1px -1px 0 #0a0a0a;
+}
+
+/* Modal Title Bars */
+.modal-title {
+	background-color: #000080;
+	color: white;
+	padding: 3px 5px;
+	font-weight: bold;
+	margin: -20px -20px 15px -20px;
+	border-bottom: 2px solid #808080;
+}
+
+/* Standardized Button Padding */
+#gameOver button, .remove-btn {
+	min-height: 24px;
+	padding: 3px 12px;
+}
+
+/* give app_game same size as game_container */
+#app_container {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	overflow: hidden; /* Prevent any content overflow */
+}
+
+/* landing page */
+#landingPage{
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #c0c0c0; /* Windows 95 border color */
+	border-top: 2px solid #dfdfdf;
+	border-left: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	background-color: #bfbfbf; /* Windows 95 gray */
+	color: white;
+	padding: 20px;
+	overflow: hidden; /* Prevent content from spilling out */
+	gap: 15px; /* Add consistent spacing between elements */
+	margin-top: 30px;
+}
+
+/* title */
+#title1 {
+	color: white;
+	text-shadow: 2px 2px #000080;
+	font-size: 2.8rem;
+	margin-bottom: 0;
+	margin-top: 20px;
+}
+
+#title {
+	color: white;
+	font-size: 2.5rem;  /* Increased font size */
+	padding: 2px 5px;
+}
+
+#date {
+	color: red;
+	font-size: 4.5rem;
+	margin: 0;
+	line-height: 1;
+}
+
+#Welcome {
+	color: white;
+	font-size: 1.3rem;
+	margin: 15px 0 5px 0;
+	color: rgb(0, 255, 229);
+}
+
+/* Button to start the game */
+#Player_vs_BOT,
+#Player_vs_Player,
+#Multiplayer,
+#Matchmaking,
+#Tournament {
+	background-color: #bfbfbf;
+	color: black;
+	padding: 8px 12px; /* Increased vertical padding */
+	font-size: 0.95rem;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	width: 170px; /* Reduced width */
+	height: 36px; /* Increased height */
+	text-align: center;
+}
+
+#Player_vs_BOT:hover,
+#Player_vs_Player:hover,
+#Multiplayer:hover,
+#Matchmaking:hover,
+#Tournament:hover {
+	background-color: #0078d7; /* Windows 95 highlight blue */
+	color: white;
+}
+
+/* Active state for buttons */
+#Player_vs_BOT:active,
+#Player_vs_Player:active,
+#Multiplayer:active,
+#Matchmaking:active,
+#Tournament:active {
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+	box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+	transform: translateY(1px);
+}
+
+/* Title and Header Section */
+#head {
+	display: flex;
+	background-color: #000080; /* Windows 95 blue */
+	flex-direction: column;
+	align-items: center;
+	width: 100%; /* Match canvas width exactly */
+	height: 100px;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+/* Game Container */
+#gameContainer {
+	position: relative;
+	margin: 20px auto;
+	display: none;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	border: 2px solid #c0c0c0;
+	border-top: 2px solid #dfdfdf;
+	border-left: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	background-color: #bfbfbf;
+	padding: 0;
+	overflow: hidden; /* Prevent any content overflow */
+}
+
+#topFrame {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 60px; /* Adjust height of top frame */
+	padding: 5px 10px;
+	background-color: #bfbfbf;
+	border-bottom: 2px solid #808080;
+	color: rgb(0, 0, 0);
+	margin: 0; /* Remove any margins */
+}
+
+#tail {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 50px;
+	background-color: #bfbfbf;
+	border-top: 2px solid #dfdfdf;
+	padding: 0 10px;
+	margin: 0;
+}
+
+.tail-buttons {
+	display: flex;
+	gap: 5px;
+}
+
+#tail button {
+	padding: 3px 10px;
+	font-size: 0.9rem;
+}
+
+#Menu,
+#Settings,
+#Restart{
+	width: 100px;
+	height: 30px;
+	font-size: 0.9rem;
+	padding: 5px 10px;
+	margin-left: 5px;
+}
+
+h1 {
+	font-size: 1rem;
+	margin: 0;
+}
+
+/* Player Info Section */
+#player1, #player2, #player3, #player4 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Player names */
+#Name1 {
+	font-weight: bold;
+	color: green;
+	font-size: 1.2rem;
+}
+
+#Name2 {
+	font-weight: bold;
+	color: blue;
+	font-size: 1.2rem;
+}
+
+#Name3 {
+	display: none;
+	font-weight: bold;
+	color: orange;
+	font-size: 1.2rem;
+}
+
+#Name4 {
+	display: none;
+	font-weight: bold;
+	color: purple;
+	font-size: 1.2rem;
+}
+
+/* Player scores */
+#Player_1, #Player_2 {
+	font-size: 1.2rem;
+	color: #000000;
+	padding: 2px 5px;
+	background-color: #ffffff;
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+}
+
+#Player_3, #Player_4 {
+	display: none;
+	font-size: 1.2rem;
+	color: #000000;
+	padding: 2px 5px;
+	background-color: #ffffff;
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+}
+
+/* Canvas */
+#canvas1 {
+	display: block;
+	width: 100%;
+	height: calc(100% - 150px); /* Adjust for header and footer */
+	background-color: #000000;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	margin: 0;
+}
+
+/* Game Over Screen */
+#gameOver {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 1000;
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 500px;
+	height: 400px;
+	border: 4px solid #c0c0c0; /* Windows 95 border color */
+	border-top: 4px solid #dfdfdf;
+	border-left: 4px solid #dfdfdf;
+	border-right: 4px solid #808080;
+	border-bottom: 4px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	background-color: #bfbfbf; /* Windows 95 gray */
+	color: white;
+	padding: 30px;
+	gap: 15px;
+}
+
+#winnerText {
+	color: #000080;
+	text-shadow: 1px 1px #ffffff;
+	font-size: 3rem;
+	margin-bottom: 30px;
+}
+
+#finalScore {
+	color: #000000;
+	background-color: #ffffff;
+	padding: 5px 15px;
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+	font-size: 2rem;
+	margin-bottom: 40px;
+	text-align: center;
+	line-height: 1.5;
+}
+
+/* Game Over Screen Button Styles */
+#gameOver button {
+	background-color: #bfbfbf;
+	color: black;
+	width: 200px;
+	height: 50px;
+	font-size: 1.1rem;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	margin: 5px 0;
+	text-align: center;
+	display: block; /* Ensure block display */
+}
+
+#gameOver button:hover {
+	background-color: #0078d7;
+	color: white;
+}
+
+#gameOver button:active {
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+	box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+	transform: translateY(1px);
+}
+
+/* Settings Menu Button Styles */
+.instructions {
+	background-color: #ffffff;
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+	padding: 15px;
+	margin-bottom: 20px;
+}
+
+.instructions h3 {
+	color: #000080;
+	margin-bottom: 10px;
+}
+
+.instructions p {
+	color: #000000;
+	margin: 5px 0;
+	font-size: 0.9rem;
+}
+
+.settings-buttons {
+	display: flex;
+	justify-content: space-between;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.settings-buttons button {
+	padding: 8px;
+	font-size: 1rem;
+}
+
+#saveSettings {
+	flex: 2; /* Takes up 2/3 of the space */
+}
+
+#cancelSettings {
+	flex: 1; /* Takes up 1/3 of the space */
+	margin-top: 20px;
+	padding: 8px;
+}
+
+#cancelSettings:hover {
+	background-color: #ff6b6b;
+}
+
+.settings {
+	margin-top: 15px;
+	display: flex;
+	gap: 20px;
+}
+
+.paused {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 24px;
+	background: rgba(0,0,0,0.7);
+	color: white;
+	padding: 20px;
+}
+
+/* Settings Menu Styles */
+#settingsMenu {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	background-color: #bfbfbf;
+	border: 2px solid #c0c0c0;
+	border-top: 2px solid #dfdfdf;
+	border-left: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	padding: 20px;
+	z-index: 1000;
+}
+
+#settingsMenu h2 {
+	color: #000000;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.settings-content {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.setting-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+}
+
+.setting-item label {
+	color: #000000;
+}
+
+#saveSettings {
+	margin-top: 20px;
+	width: 100%;
+	padding: 8px;
+}
+
+/* Sound volume slider styling */
+#soundVolume {
+	width: 150px;
+}
+
+#soundVolume::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 15px;
+	height: 25px;
+	background: #bfbfbf;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	cursor: pointer;
+}
+
+#soundVolume::-moz-range-thumb {
+	width: 15px;
+	height: 25px;
+	background: #bfbfbf;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	cursor: pointer;
+}
+
+/* Button container */
+.button-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 12px;
+	width: 100%;
+	max-width: 180px;
+	padding-bottom: 20px; /* Add space for quit button */
+}
+
+/* Main buttons group */
+.main-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
+}
+
+/* Tournament Modal Styles */
+#tournamentModal {
+	/* position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%); */
+	width: 600px;
+	background-color: #bfbfbf;
+	border: 2px solid #c0c0c0;
+	border-top: 2px solid #dfdfdf;
+	border-left: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	padding: 20px;
+	z-index: 1000;
+}
+
+.tournament-setup {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.player-registration {
+	display: flex;
+	gap: 10px;
+}
+
+#playerNameInput {
+	flex-grow: 1;
+	padding: 5px;
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+}
+
+.registered-players {
+	background-color: white;
+	border: 2px solid #808080;
+	padding: 10px;
+	min-height: 150px;
+}
+
+#playersList {
+	list-style: none;
+	padding: 0;
+}
+
+#playersList li {
+	display: flex;
+	justify-content: space-between;
+	padding: 5px;
+	margin: 5px 0;
+	background-color: #efefef;
+}
+
+.tournament-bracket {
+	margin-top: 20px;
+}
+
+#bracketContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+	background-color: white;
+	padding: 15px;
+	border: 2px solid #808080;
+}
+
+.match-pair {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px;
+	background-color: #efefef;
+	margin: 5px 0;
+}
+
+#currentMatch {
+	margin-top: 20px;
+	padding: 15px;
+	background-color: #efefef;
+	border: 2px solid #808080;
+	text-align: center;
+}
+
+#nextMatchBtn {
+	background-color: #efefef;
+	color: #000000;
+	width: 200px;
+	height: 80px;
+	font-size: 1.2rem;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	margin: 15px 0;
+	text-align: center;
+}
+
+#nextMatchBtn:hover {
+	background-color: #21a1f1;
+}
+
+#nextMatchBtn:active {
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+	box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+	transform: translateY(1px);
+}
+
+/* Update Tournament Modal Button Styles */
+#startMatchBtn,
+#startTournamentBtn,
+#cancelTournamentBtn {
+	width: 150px;
+	height: 40px;
+	margin: 5px;
+	font-size: 1rem;
+}
+
+.tournament-controls {
+	display: flex;
+	justify-content: center;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+/* Add Tournament winner announcement styles */
+#winnerText.tournament-winner {
+	font-size: 2.5rem;
+	color: #000080;
+	text-shadow: 2px 2px #ffffff;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+/* Update tournament modal button styles */
+#addPlayerBtn {
+	width: 120px;
+	height: 35px;
+	font-size: 0.9rem;
+}
+
+#playerNameInput {
+	flex-grow: 1; /* Grow to fill available space */
+	padding: 5px;
+	height: 35px;
+}
+
+/* Windows 95 style input validation */
+#playerNameInput.invalid {
+	border: 2px solid;
+	border-color: #000000 #ffffff #ffffff #000000;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+#playerNameInput.duplicate {
+	border: 2px solid;
+	border-color: #000000 #ffffff #ffffff #000000;
+	background-color: #ffffff;
+	color: #000000;
+}
+
+/* Windows 95 focus style */
+#playerNameInput:focus {
+	border: 2px solid;
+	border-color: #000000 #dfdfdf #dfdfdf #000000;
+	outline: none;
+}
+
+/* Add styles for the remove button */
+.remove-btn {
+	width: 100px;
+	height: 35px;
+	cursor: pointer;
+	font-size: 0.9rem;
+	transition: background-color 0.2s ease;
+}
+
+.remove-btn:active {
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+	box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+	transform: translateY(1px);
+}
+
+/* Adjust styles for the list items */
+#playersList li {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px;
+	margin: 5px 0;
+	background-color: #efefef;
+	font-size: 1rem;
+}
+
+#matchmakingStatus {
+	color: white;
+	margin-top: 10px;
+}
+
+#cancelMatchmaking {
+	background-color: #bfbfbf;
+	color: white;
+	padding: 8px 12px; /* Increased vertical padding */
+	font-size: 0.95rem;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	width: 130px;
+	height: 36px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#cancelMatchmaking:hover {
+	background-color: gray;
+	color: black;
+}
+
+.game-screen {
+	display: none;
+}
+
+.game-screen.active {
+	display: block;
+}
+
+/* Matchmaking Modal */
+#matchmakingModal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 1000;
+  }
+  
+  #matchmakingModal .modal-content {
+	width: 400px;
+	background-color: #bfbfbf;
+	border: 2px solid #c0c0c0;
+	border-top: 2px solid #dfdfdf;
+	border-left: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	padding: 20px;
+	text-align: center;
+  }
+  
+  #matchmakingStatusModal {
+	font-size: 1.2rem;
+	color: #000080;
+	margin: 20px 0;
+  }
+  
+  .spinner {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border: 4px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	border-top: 4px solid #000080;
+	animation: spin 1s linear infinite;
+	margin: 20px auto;
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+  
+  #cancelMatchmakingModal {
+	background-color: #bfbfbf;
+	color: black;
+	width: 200px;
+	height: 40px;
+	font-size: 1.1rem;
+	border: 2px solid #dfdfdf;
+	border-right: 2px solid #808080;
+	border-bottom: 2px solid #808080;
+	box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #ffffff;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+	margin: 5px auto;
+	text-align: center;
+  }
+  
+  #cancelMatchmakingModal:hover {
+	background-color: gray;
+	color: white;
+  }
+  
+  #cancelMatchmakingModal:active {
+	border: 2px solid #808080;
+	border-right: 2px solid #dfdfdf;
+	border-bottom: 2px solid #dfdfdf;
+	box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #ffffff;
+	transform: translateY(1px);
+  }

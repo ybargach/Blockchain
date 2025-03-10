@@ -1,0 +1,644 @@
+/* Global Styles */
+body {
+    background: #008080;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Ensure the app container is also centered */
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Login Window Styles */
+.login-window {
+    width: 500px;
+}
+
+.login-window .window-body {
+    margin: 0;
+    padding: 5px;
+    display: flex;
+}
+
+.photo-section {
+    width: 182px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-section {
+    flex: 1;
+    padding-left: 20px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+}
+
+.field-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.field-row label u {
+    text-decoration: underline;
+}
+
+.field-row input[type="email"],
+.field-row input[type="password"] {
+    width: 100%;
+}
+
+.remember-row {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.button-row {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+}
+
+.separator {
+    text-align: center;
+}
+
+.fortytwo-login {
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+}
+
+.fortytwo-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 4px 12px;
+}
+
+.fortytwo-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Profile Window Styles */
+.photo-container {
+    width: 150px;
+    height: 150px;
+    border: 1px solid #808080;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c0c0c0;
+    color: #808080;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* Tab System Styles */
+menu[role="tablist"] {
+    padding: 0 0 0 8px;
+    margin: 0;
+    position: relative;
+    margin-bottom: -2px;
+    z-index: 1;
+}
+
+menu[role="tablist"] > li {
+    margin-left: 0px;
+}
+
+menu[role="tablist"] > li[aria-selected="true"] {
+    margin-bottom: -1px;
+}
+
+[role="tabpanel"] {
+    flex: 1;
+    margin: 0;
+    min-height: 0;
+}
+
+[role="tabpanel"] .window-body {
+    height: calc(100% - 25px);
+    position: relative;
+    overflow-y: auto;
+    padding: 16px;
+}
+
+.tab-content {
+    display: none;
+    height: 100%;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Desktop Mode Styles */
+body.desktop-mode {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    height: 100vh;
+    display: block;
+}
+
+body.desktop-mode #app {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Desktop Styles */
+#desktop {
+    background: #008080;
+    width: 100vw;
+    height: calc(100vh - 28px);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+}
+
+.desktop-icon {
+    position: absolute;
+    width: 84px;
+    text-align: center;
+    color: white;
+    cursor: default;
+    user-select: none;
+    padding: 5px;
+}
+
+.desktop-icon.selected {
+    background: rgba(0, 0, 128, 0.5);
+}
+
+.desktop-icon.dragging {
+    opacity: 0.7;
+}
+
+/* Taskbar Styles */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 28px;
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    z-index: 9999;
+}
+
+.start-button {
+    height: 22px;
+    min-width: 50px;
+    margin-right: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    flex-shrink: 0;
+}
+
+#taskbarItems {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    margin: 0 4px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+#taskbarItems::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.taskbar-item {
+    height: 22px;
+    min-width: 125px;
+    margin: 0 2px;
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+    padding: 3px 8px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.taskbar-item.active {
+    box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #dfdfdf, inset 2px 2px grey, inset -2px -2px #fff;
+}
+
+.clock {
+    border-left: 1px solid #808080;
+    padding: 0 10px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    flex-shrink: 0;
+    min-width: 70px;
+}
+
+/* Window Styles */
+.window {
+    position: absolute;
+
+    background: silver;
+    z-index: 100;
+}
+.window-profile {
+    position: absolute;
+    min-width: 200px;
+    min-height: 150px;
+    width  : calc(100% - 40px);
+    height: calc(100% - 90px);
+    background: silver;
+    z-index: 100;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+}
+
+/* Context Menu Styles */
+.context-menu-item {
+    padding: 4px 20px;
+    cursor: pointer;
+}
+
+.context-menu-item:hover {
+    background: #000080;
+    color: white;
+}
+
+/* Icon Styles */
+.icon-image {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto 5px;
+    background: silver;
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #dfdfdf, inset -2px -2px grey, inset 2px 2px #fff;
+}
+
+.icon-label {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
+    font-size: 11px;
+}
+
+/* Text Editor Styles */
+textarea {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    resize: none;
+    border: none;
+    outline: none;
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: pre;
+    overflow: auto;
+}
+
+#container {
+    flex: 1;
+    margin: 0;
+    padding: 2px;
+    background: white;
+    border: inset 1px #969696;
+}
+
+/* Hide Signup Window by Default */
+#signupWindow {
+    display: none;
+}
+
+hr {
+    margin: 0px 0;
+}
+
+.btn-notification {
+    border-radius: 0 !important;
+    min-width: 22px;
+    min-height: 22px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.search-input {
+    background: white;
+    border: 1px solid #808080;
+    border-right: none;
+    padding: 2px 5px;
+    height: 22px;
+    width: 150px;
+    outline: none;
+}
+
+.search-button {
+    background: silver;
+    border: 1px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    min-width: 22px;
+    min-height: 22px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.search-button:active {
+    border-color: #808080 #ffffff #ffffff #808080;
+}
+
+/* Loading Screen Styles */
+.loading-page {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #000080;
+}
+
+.loading-page img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+
+.loading-page p {
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #383636;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.friend-action {
+    margin-left: 5px;
+}
+
+
+.search-window {
+    min-width: 300px;
+    max-width: 400px;
+}
+
+.search-window .window-body {
+    background: silver;
+}
+
+.search-window-input {
+    width: 100%;
+}
+
+.search-result-item button {
+    min-width: 60px;
+    height: 20px;
+    font-size: 11px;
+    padding: 2px 4px;
+    margin-left: 8px;
+}
+
+.search-result-item:hover button {
+    background: silver;
+}
+
+
+/* Profile Page Styles */
+.profile-header {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.photo-container {
+    width: 150px;
+    height: 150px;
+    border: 2px solid;
+    border-color: #808080 #fff #fff #808080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c0c0c0;
+    color: #808080;
+    font-size: 14px;
+    margin-right: 20px;
+    overflow: hidden;
+    box-shadow: inset 1px 1px #0a0a0a, inset -1px -1px #dfdfdf;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatar-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.user-info {
+    flex: 1;
+    background: #fff;
+    padding: 10px;
+    box-shadow: inset -1px -1px #fff, inset 1px 1px grey, inset -2px -2px #dfdfdf, inset 2px 2px #0a0a0a;
+}
+
+.info-value {
+    font-weight: bold;
+    color: #000080;
+}
+
+.win98-window {
+    box-shadow: inset -1px -1px #0a0a0a, inset 1px 1px #fff, inset -2px -2px grey, inset 2px 2px #dfdfdf;
+}
+
+
+[role="tabpanel"] .window-body {
+    height: calc(100% - 25px);
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.tab-content {
+    height: auto;
+    padding-bottom: 20px;
+}
+/* Hide Signup Window by Default */
+#signupWindow {
+    display: none;
+}
+
+/* Notification Styles */
+.notification-dropdown {
+    position: absolute;
+    right: 0;
+    bottom: 28px;
+    width: 300px;
+    max-height: 400px;
+    overflow-y: auto;
+    background: silver;
+    border: 2px solid;
+    border-color: #ffffff #808080 #808080 #ffffff;
+    z-index: 9999;
+    display: none;
+}
+
+.notification-item {
+    padding: 8px;
+    margin: 5px;
+    background: #c0c0c0;
+    border: 1px solid;
+    border-color: #dfdfdf #808080 #808080 #dfdfdf;
+}
+
+.notification-item img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    margin-right: 8px;
+    border: 1px solid #808080;
+}
+
+.notification-empty {
+    padding: 15px;
+    text-align: center;
+    color: #808080;
+}
+
+.notification-header {
+    background: #000080;
+    color: white;
+    padding: 4px 8px;
+    font-weight: bold;
+}
+
+/* Add these modal dialog styles to custom.css */
+.modal-overlay {
+    animation: fadeIn 0.2s ease-out;
+}
+
+.confirmation-dialog, .message-dialog {
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { 
+        transform: translate(-50%, -70%);
+        opacity: 0;
+    }
+    to { 
+        transform: translate(-50%, -50%);
+        opacity: 1;
+    }
+}
+
+/* Make sure dialog buttons have consistent styling */
+.confirmation-dialog button, .message-dialog button {
+    min-width: 80px;
+    height: 23px;
+}
+
+
+
+
+
+
+
+
+/* Tournament styles */
+.tournament-list-view table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .tournament-list-view th,
+  .tournament-list-view td {
+    padding: 4px;
+    border: 1px solid #808080;
+  }
+  
+  .tournament-list-view th {
+    background-color: silver;
+  }
+  
+  .tournament-list-view tr:nth-child(even) {
+    background-color: #f0f0f0;
+  }
+  
+  .tournament-list-view tr:hover {
+    background-color: #e0e0e0;
+  }
+  
+  /* Make the table responsive */
+  @media (max-width: 500px) {
+    .tournament-list-view table {
+      font-size: 12px;
+    }
+    
+    .tournament-list-view th,
+    .tournament-list-view td {
+      padding: 2px;
+    }
+  }
+  
+  /* Card view styles */
+  .tournament-card-view {
+    width: 100%;
+  }
